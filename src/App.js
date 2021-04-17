@@ -10,12 +10,12 @@ function App() {
 
    useEffect(()=>{
     // this code loads when app.js loads as our dependency is []
-    firebase.firestore().collection("todos").onSnapshot(snapshot => {
+    firebase.firestore().collection("todos").orderBy('timeStamp','desc').onSnapshot(snapshot => {
 
       setTodos(snapshot.docs.map(doc => 
         ({ 
           id: doc.id ,
-          todo : doc.data().text
+          todo : doc.data().text,
         })
         ))  
      })
@@ -30,7 +30,8 @@ function App() {
       event.preventDefault();
 
       firebase.firestore().collection("todos").add({
-        text : input
+        text : input,
+        timeStamp : firebase.firestore.FieldValue.serverTimestamp()
       })
       // setTodos([...todos, input]);
       setInput('');
