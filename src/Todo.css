@@ -1,0 +1,17 @@
+.todo li {
+  display: inline-block;
+  list-style-type: none;
+  border: 1px solid black;
+  margin: 8px;
+  padding: 10px;
+  width: 800px;
+}
+
+.todo button {
+  display: inline;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
