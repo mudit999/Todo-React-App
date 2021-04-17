@@ -1,4 +1,4 @@
-# Todo-React-App 
+# Todo-React-App
 
 Deployed on firebase : https://todo-app-5ab94.web.app/
 
